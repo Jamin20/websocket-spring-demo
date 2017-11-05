@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello WebSocket</title>
+    <link href="webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="webjars/app/css/main.css" rel="stylesheet">
+    <script src="webjars/jquery/jquery.min.js"></script>
+    <script src="webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="webjars/stomp-websocket/stomp.js"></script>
+    <script src="webjars/app/js/app.js"></script>
+    <!--
+    <script src="http://cdn.bootcss.com/sockjs-client/1.1.1/sockjs.min.js"></script>
+    <script src="http://cdn.bootcss.com/stomp.js/2.3.3/stomp.js"></script>
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    -->
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket 连接:</label>
+                    <button id="connect" class="btn btn-default" type="submit">打开连接</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">断开连接
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="message">消息：</label>
+                    <input type="text" id="message" class="form-control" placeholder="请输入...">
+                </div>
+                <button id="send" class="btn btn-default" type="submit">发送</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>来自服务器的群发信息：</th>
+                </tr>
+                </thead>
+                <tbody id="greetings">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
